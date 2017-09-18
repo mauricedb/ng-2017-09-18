@@ -1,31 +1,62 @@
-var xEl = <HTMLInputElement>document.getElementById("x");
-var yEl = <HTMLInputElement>document.getElementById("y");
-var result = document.getElementById("result");
+function log(prefix = "") {
+  return function(target: any, key: string) {
+    const fn = target[key];
 
-class Calculator {
+    target[key] = function(...args) {
+      console.time(prefix + key);
+      const result = fn.call(this, ...args);
+      console.timeEnd(prefix + key);
+      return result;
+    };
+
+    return target;
+  };
+}
+
+export default class Calculator {
   public result = 0;
 
-  add(x, y) {
+  @log()
+  add(x: number, y: number) {
     this.result = x + y;
 
     return this.result;
   }
 
-  subtract(x, y) {
+  @log("s")
+  subtract(x: number, y: number) {
     this.result = x - y;
     return this.result;
   }
 }
 
-var calulator = new Calculator();
+function getData(x: any) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(x), 1000);
+  });
+}
 
-document.getElementById("add").addEventListener("click", function() {
-  calulator.add(+xEl.value, +yEl.value);
-  result.textContent = calulator.result.toString();
-});
+getData(100).then(e => console.log(e));
 
-document.getElementById("subtract").addEventListener("click", function() {
-  calulator.subtract(+xEl.value, +yEl.value);
-  result.textContent = calulator.result.toString();
-});
+async function doStuff() {
+  var x = await getData(42);
+  console.log(x);
+}
 
+doStuff();
+
+function x(this: { x: number }) {
+  this.x = 1;
+}
+
+x.call({});
+
+function print(person: { name: string } | null) {
+  if (person) {
+    console.log(person.name);
+  }
+}
+
+print({ name: "Me" });
+
+print(null);
