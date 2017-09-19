@@ -1,0 +1,27 @@
+
+<div>
+
+  Hallo {{name}}
+
+  <input type="text" [(ngModel)]="name">
+
+  <button (click)="onCLick()">CLick me</button>
+</div>
+
+
+<div>
+
+  1 + 2 = {{1 + 2}}
+</div>
+
+<div>
+  {{model.value}}
+  {{ now }}
+</div>
+
+
+<ul>
+  <li *ngFor="let cat of cats">
+    {{cat.name}}
+  </li>
+</ul>
