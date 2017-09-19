@@ -1,0 +1,12 @@
+<h2>Cats</h2>
+
+<ul>
+  <app-cat *ngFor="let c of cats;let i = index" [cat]="c" [index]="i" (delete)="deleteTheCat($event)">Dit is <br/>een kat</app-cat>
+</ul>
+
+
+
+<app-cat [cat]="cats[0]">Een andere kat {{1+ 1}} is: </app-cat>
+
+
+{{showMe()}}

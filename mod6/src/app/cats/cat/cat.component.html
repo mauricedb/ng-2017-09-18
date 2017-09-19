@@ -1,0 +1,18 @@
+<li>
+  <ng-content></ng-content>
+
+  {{cat.name}}
+
+
+<input *ngIf="!notShow" type="text" #model="ngModel" [(ngModel)]="cat.name">
+
+nowShow: {{notShow}}
+
+  <button #btn (click)="deleteCat()">Delete</button>
+
+
+  <button  (click)="showMe(model)">Show me</button>
+
+  <button  (click)="notShow=!notShow">Hide me</button>
+  
+</li>

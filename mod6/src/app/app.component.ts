@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  now = new Date();
+
+  ngOnInit(){
+    // setInterval(() => this.now = new Date(), 1000)
+  }
 }
