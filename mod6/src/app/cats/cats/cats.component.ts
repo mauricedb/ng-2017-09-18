@@ -19,13 +19,17 @@ export class CatsComponent implements OnInit {
     this.cats.splice(index, 1);
   }
 
+  add() {
+    // this.cats.push({name: 'Garfield'});
+    this.cats[0] = { name: "Garfield" };
+  }
+  
   count = 0;
   showMe() {
-    console.count("showMe");
+    // console.count("showMe");
 
     // this.count++;
 
     return this.count;
   }
-
 }

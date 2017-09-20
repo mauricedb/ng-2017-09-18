@@ -1,4 +1,5 @@
 <li>
+  <div>
   <ng-content></ng-content>
 
   {{cat.name}}
@@ -11,8 +12,9 @@ nowShow: {{notShow}}
   <button #btn (click)="deleteCat()">Delete</button>
 
 
-  <button  (click)="showMe(model)">Show me</button>
+  <button  (click)="showMe(model)"><span class="child">Show me</span>Show me</button>
 
   <button  (click)="notShow=!notShow">Hide me</button>
   
+</div>
 </li>

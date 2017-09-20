@@ -1,10 +1,11 @@
 <h2>Cats</h2>
 
 <ul>
-  <app-cat *ngFor="let c of cats;let i = index" [cat]="c" [index]="i" (delete)="deleteTheCat($event)">Dit is <br/>een kat</app-cat>
+  <app-cat *ngFor="let c of cats;let i = index" [cat]="c" [index]="i" 
+  (delete)="deleteTheCat($event)"><span class="child">Dit is <br/>een kat</span></app-cat>
 </ul>
 
-
+<button (click)="add()">Add</button>
 
 <app-cat [cat]="cats[0]">Een andere kat {{1+ 1}} is: </app-cat>
 
