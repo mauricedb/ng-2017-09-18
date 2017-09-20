@@ -1,0 +1,9 @@
+<p>
+  movies2 works!
+</p>
+
+<ul>
+  <li *ngFor="let movie of movies$ | async">
+    {{movie.title}}
+  </li>
+</ul>
