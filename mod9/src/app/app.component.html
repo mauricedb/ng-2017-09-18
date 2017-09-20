@@ -1,5 +1,8 @@
 
 <h1>Cute animals</h1>
 
-<app-cat></app-cat>
-<app-dog></app-dog>
+<a [routerLink]="'/dog'">Dog</a>
+<a [routerLink]="'/cat'">Cat</a>
+<a [routerLink]="['/cat', 'zorro']">Zorro</a>
+
+<router-outlet></router-outlet>
