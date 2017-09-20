@@ -4,18 +4,16 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
-import { DogsModule, DogComponent } from "./dogs/dogs.module";
-import { CatsModule, CatComponent } from "./cats/cats.module";
 
 var routeModule = RouterModule.forRoot([
   {
     path: "cat",
-    component: CatComponent,
+    loadChildren: './cats/cats.module#CatsModule'
 
   },
   {
     path: "dog",
-    component: DogComponent
+    loadChildren: './dogs/dogs.module#DogsModule'
   },
 //   {
 //     path: 'admin',
@@ -32,7 +30,7 @@ var routeModule = RouterModule.forRoot([
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, routeModule, DogsModule, CatsModule],
+  imports: [BrowserModule, routeModule],
   providers: [],
   bootstrap: [AppComponent]
 })

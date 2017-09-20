@@ -6,7 +6,8 @@ import { RouterModule } from "@angular/router";
 export { CatComponent } from './cat/cat.component';
 
 var routeModule = RouterModule.forChild([
-  {path: "cat/:name", component: CatComponent}
+  {path: "", component: CatComponent},
+  {path: ":name", component: CatComponent}
 ])
 
 @NgModule({

@@ -5,7 +5,9 @@ import { RouterModule } from "@angular/router";
 
 export  { DogComponent } from './dog/dog.component';;
 
-var routeModule = RouterModule.forChild([])
+var routeModule = RouterModule.forChild([
+  {path: "", component: DogComponent},
+])
 
 @NgModule({
   imports: [
