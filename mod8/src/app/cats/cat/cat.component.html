@@ -1,0 +1,28 @@
+<form #theForm="ngForm" (submit)="save()">
+  <div>
+    <label>Name</label>
+    <input type="text" #theName="ngModel" [(ngModel)]="cat.name" name="name"  minlength="4" required maxlength="25">
+{{ theName.errors | json}}
+    <div class="error" *ngIf="theName.errors?.required">
+      The name is required
+    </div>
+    <div class="error" *ngIf="theName.errors?.minlength">
+      <!-- {{ theName.errors.minlength | json}} -->
+      The name must be {{ theName.errors.minlength.requiredLength}} chars
+    </div>
+  </div>
+  <div>
+    <label>Age</label>
+    <input type="number" [(ngModel)]="cat.age" name="age" max="32" min="0">
+  </div>
+
+  {{ theForm.invalid}}
+  <div>
+    <button [disabled]="theForm.invalid || theForm.pristine">Save</button>
+  </div>
+
+
+    <div id="test" class="xyz" bla="1">
+
+    </div>
+</form>

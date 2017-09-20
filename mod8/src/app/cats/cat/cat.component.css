@@ -1,0 +1,12 @@
+label {
+    display: inline-block;
+    width: 10vw;
+}
+
+button {
+    margin: 10px;
+}
+
+.error {
+    color: red;
+}
