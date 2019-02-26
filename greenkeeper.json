@@ -1,0 +1,16 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "mod2/package.json",
+        "mod4/package.json",
+        "mod5/package.json",
+        "mod6/package.json",
+        "mod7/ajax/package.json",
+        "mod7/rx/package.json",
+        "mod8/package.json",
+        "mod9/package.json"
+      ]
+    }
+  }
+}
