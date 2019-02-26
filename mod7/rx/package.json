@@ -10,6 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "rxjs": "^5.4.3"
+    "rxjs": "^6.4.0"
   }
 }
